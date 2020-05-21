@@ -5,6 +5,8 @@
 // because `process.env.CONTEXT` is only present at build time
 // so `loadNetlifyEnv()` from 'netlify/utils/env.js' needs to be called before this function
 export const getWebsiteUrl = () => {
+  console.log('context', process.env.CONTEXT) // eslint-disable-line
+
   return typeof process.env.CONTEXT === 'undefined' || process.env.CONTEXT === 'production'
     ? process.env.STELACE_INSTANT_WEBSITE_URL
     : process.env.DEPLOY_PRIME_URL

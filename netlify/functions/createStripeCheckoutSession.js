@@ -50,6 +50,7 @@ const createStripeCheckoutSession = async (event, context, callback) => {
     if (!ownerStripeAccount) throw createError(422, 'Owner has not linked their Stripe account')
 
     const websiteUrl = context.urls.websiteUrl
+    console.log('website url', websiteUrl) // eslint-disable-line
 
     // most of currencies work with 2 decimals
     let currencyDecimal = 2
